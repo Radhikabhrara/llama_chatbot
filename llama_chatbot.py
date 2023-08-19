@@ -16,7 +16,7 @@ st.markdown(hide_default_format, unsafe_allow_html=True)
 
 
 # Set your OpenAI API key
-openai.api_key = "YOUR_API_KEY"
+openai.api_key = "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"
 
 def generate_response(user_message):
     response = openai.Completion.create(
