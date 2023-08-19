@@ -1,5 +1,6 @@
 import streamlit as st
 import streamlit.components.v1 as components
+from your_llama2_library import Llama2Model  # Replace with the actual import statement
 import openai
 
 # Adding Image to web app
@@ -13,9 +14,6 @@ hide_default_format = """
        </style>
        """
 st.markdown(hide_default_format, unsafe_allow_html=True)
-
-import streamlit as st
-from your_llama2_library import Llama2Model  # Replace with the actual import statement
 
 # Initialize the llama2 model
 llama2_model = Llama2Model()  # Replace with the actual initialization code
