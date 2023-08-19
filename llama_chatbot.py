@@ -14,27 +14,30 @@ hide_default_format = """
        """
 st.markdown(hide_default_format, unsafe_allow_html=True)
 
-openai.organization = "org-O2QUqr8oJWvMwcEkPfl0vKKH"
-#openai.api_key = os.getenv("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")
-#openai.Model.list()
+import streamlit as st
+from your_llama2_library import Llama2Model  # Replace with the actual import statement
 
+# Initialize the llama2 model
+llama2_model = Llama2Model()  # Replace with the actual initialization code
 
-# Set your OpenAI API key
-openai.api_key = "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"
+# Function to perform predictions using the llama2 model
+def llama2_predict(input_text):
+    llama2_output = llama2_model.predict(input_text)  # Replace with the actual prediction code
+    return llama2_output
 
-def generate_response(user_message):
-    response = openai.Completion.create(
-        engine="llama2",  # Use the appropriate engine name
-        prompt=user_message,
-        max_tokens=50  # Adjust as needed
-    )
-    return response.choices[0].text.strip()
+# Streamlit app
+def main():
+    st.title("llama2 Model App")
+    
+    # Input text box
+    input_text = st.text_area("Enter some input text:", "")
+    
+    if st.button("Predict"):
+        if input_text:
+            prediction = llama2_predict(input_text)
+            st.success(prediction)
+        else:
+            st.warning("Please enter some input text.")
 
-st.title("Llama2 Chatbot")
-
-user_input = st.text_input("You:", "")
-
-if st.button("Send"):
-    response = generate_response(user_input)
-    st.text("Llama2: " + response)
-
+if __name__ == "__main__":
+    main()
