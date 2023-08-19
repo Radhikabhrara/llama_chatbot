@@ -1,5 +1,19 @@
 import streamlit as st
+import streamlit.components.v1 as components
 import openai
+
+# Adding Image to web app
+st.set_page_config(page_title="llama_chatbot",layout="wide",initial_sidebar_state="auto")
+
+
+hide_default_format = """
+       <style>
+       #MainMenu {visibility: hidden; }
+       footer {visibility: hidden;}
+       </style>
+       """
+st.markdown(hide_default_format, unsafe_allow_html=True)
+
 
 # Set your OpenAI API key
 openai.api_key = "YOUR_API_KEY"
