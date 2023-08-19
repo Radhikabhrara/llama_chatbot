@@ -13,10 +13,15 @@ hide_default_format = """
        </style>
        """
 st.markdown(hide_default_format, unsafe_allow_html=True)
+import os
+
+openai.organization = "org-O2QUqr8oJWvMwcEkPfl0vKKH"
+openai.api_key = os.getenv("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")
+openai.Model.list()
 
 
 # Set your OpenAI API key
-openai.api_key = "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"
+#openai.api_key = "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"
 
 def generate_response(user_message):
     response = openai.Completion.create(
