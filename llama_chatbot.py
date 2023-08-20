@@ -1,6 +1,5 @@
 import streamlit as st
 import streamlit.components.v1 as components
-from your_llama2_library import Llama2Model  # Replace with the actual import statement
 import openai
 
 # Adding Image to web app
