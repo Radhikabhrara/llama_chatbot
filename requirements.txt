@@ -1,2 +1,7 @@
 streamlit
 openai
+bitsandbytes
+datasets
+peft
+transformers
+torch
